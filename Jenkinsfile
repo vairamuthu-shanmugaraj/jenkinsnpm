@@ -16,14 +16,11 @@ pipeline {
         )
       }
     }
-    stage('Building') {
+    stage('build') {
       steps {
-        readFile 'Jenkinsfile'
-        timestamps() {
-          sleep 10
-        }
-        
-        build 'test2'
+        sh 'ls'
+        sh '''cd SampleStudentProject
+ls'''
       }
     }
   }
