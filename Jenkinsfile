@@ -30,14 +30,14 @@ cd target/
 ls'''
       }
     }
-	stage ('xyz') {
-		steps {
-		jobDsl scriptText: '''job (\'test\') {
+    stage('xyz') {
+      steps {
+        jobDsl(scriptText: '''job ('test') {
 		scm {
-			github(\'jenkinsci/job-dsl-plugin\', \'master\')
+			github('jenkinsci/job-dsl-plugin', 'master')
 			} 	
-		}'''
-		}
-	}
+		}''')
+        }
+      }
+    }
   }
-}
