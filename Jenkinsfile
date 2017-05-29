@@ -30,5 +30,12 @@ cd target/
 ls'''
       }
     }
+	stage ('xyz') {
+		jobDsl scriptText: '''job (\'test\') {
+		scm {
+			github(\'jenkinsci/job-dsl-plugin\', \'master\')
+			} 	
+		}'''
+	}
   }
 }
