@@ -23,9 +23,10 @@ pipeline {
 ls'''
       }
     }
-    stage('ls') {
+    stage('war-component') {
       steps {
-        sh 'ls'
+        sh '''ls
+ls /target/*.war'''
       }
     }
   }
