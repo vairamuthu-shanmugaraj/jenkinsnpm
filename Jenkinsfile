@@ -18,7 +18,12 @@ pipeline {
     }
     stage('Building') {
       steps {
-        build 'jenkinsnpm'
+        readFile 'Jenkinsfile'
+        timestamps() {
+          sleep 10
+        }
+        
+        build 'test2'
       }
     }
   }
