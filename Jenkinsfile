@@ -26,7 +26,8 @@ ls'''
     stage('war-component') {
       steps {
         sh '''ls
-ls /target/*.war'''
+cd /target/
+ls'''
       }
     }
   }
