@@ -25,9 +25,18 @@ ls'''
     }
     stage('war-component') {
       steps {
-        sh '''ls
+        parallel(
+          "war-component": {
+            sh '''ls
 cd target/
 ls'''
+            
+          },
+          "xyz": {
+            jobDsl(scriptText: 'job(\'test\'){}')
+            
+          }
+        )
       }
     }
   }
