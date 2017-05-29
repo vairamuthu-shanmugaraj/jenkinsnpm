@@ -19,8 +19,13 @@ pipeline {
     stage('build') {
       steps {
         sh 'ls'
-        sh '''apt-get install maven
-mvn clean install'''
+        sh '''mvn clean install
+ls'''
+      }
+    }
+    stage('ls') {
+      steps {
+        sh 'ls'
       }
     }
   }
