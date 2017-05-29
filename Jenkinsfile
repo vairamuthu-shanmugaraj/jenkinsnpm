@@ -19,8 +19,7 @@ pipeline {
     stage('build') {
       steps {
         sh 'ls'
-        sh '''cd SampleStudentProject
-ls'''
+        sh 'mvn clean install'
       }
     }
   }
