@@ -12,6 +12,10 @@ pipeline {
           "echo": {
             echo 'helloo'
             
+          },
+          "Checkout-2": {
+            git(url: 'https://github.com/vairamuthu-shanmugaraj/spring-mvc-showcase.git', branch: 'master')
+            
           }
         )
       }
