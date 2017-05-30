@@ -37,6 +37,7 @@ ls'''
 			github('jenkinsci/job-dsl-plugin', 'master')
 			} 	
 		}''')
+          input(message: 'input', id: 'ip', ok: 'ok')
         }
       }
     }
