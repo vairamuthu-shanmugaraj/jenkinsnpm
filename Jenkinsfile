@@ -30,15 +30,13 @@ cd target/
 ls'''
       }
     }
-    stage('xyz') {
+    stage('Deployment') {
       steps {
-        jobDsl(scriptText: '''job ('test') {
-		scm {
-			github('jenkinsci/job-dsl-plugin', 'master')
-			} 	
-		}''')
-          input(message: 'input', id: 'ip', ok: 'ok')
-        }
+        input(message: 'input', id: 'ip', ok: 'ok')
+        sh '''cp $WORKSPACE/target/*.war /home/ubuntu/apache-tomcat-9.0.0.M21/webapps/
+sleep 30
+curl localhost:8080/StudentEnrollmentWithSpringWebApp15.0-SNAPSHOT'''
       }
     }
   }
+}
